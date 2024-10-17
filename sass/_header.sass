@@ -1,9 +1,40 @@
+@import './_variaveis'
+@import './_mixins'
 header
     width: 80%
     height: 80px
-    background-color: $preto
+    background-color: $preto-transparencia
+    padding: 0 30px
+    border-radius: $arredondamento
     position: fixed
     top: 25px
     left: 50%
     transform: translateX(-50%)
     @include flex(row, space-between, center, no-wrap)
+
+    h1
+        font-size: $fonte-subtitulo
+
+    ul
+        @include flex(row, space-between, center, no-wrap)
+        gap: 30px
+        font-size: $fonte-texto
+
+        li:nth-child(1)
+            a
+                color: $primaria
+    div
+        %but_config
+            padding: 12px 25px
+            font-size: $fonte-texto
+            border: 1px solid $branco
+            border-radius: $arredondamento
+            font-weight: lighter
+
+        button:nth-child(1)
+            @extend %but_config
+            background: transparent
+
+        button:nth-child(2)
+            @extend %but_config
+            background-color: $secundaria
